@@ -1,6 +1,6 @@
 // @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'flus... Remove this comment to see the full error message
 import flushWriteStream from 'flush-write-stream'
-import hasha from 'hasha'
+import { hashFile } from 'hasha'
 // @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'para... Remove this comment to see the full error message
 import transform from 'parallel-transform'
 // @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'thro... Remove this comment to see the full error message
@@ -20,7 +20,7 @@ export const hasherCtor = ({ concurrentHash, hashAlgorithm }) => {
   // @ts-expect-error TS(7006) FIXME: Parameter 'fileObj' implicitly has an 'any' type.
   return transform(concurrentHash, { objectMode: true }, async (fileObj, cb) => {
     try {
-      const hash = await hasha.fromFile(fileObj.filepath, hashaOpts)
+      const hash = await hashFile(fileObj.filepath, hashaOpts)
       // insert hash and asset type to file obj
       return cb(null, { ...fileObj, hash })
     } catch (error) {

@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import readdirp from 'readdirp'
+import { readdirp } from 'readdirp'
 import { describe, expect, test } from 'vitest'
 
 import { copyTemplateDir } from '../../../../dist/utils/copy-template-dir/copy-template-dir.js'

@@ -27,6 +27,7 @@ export const detectNetlifyLambda = async function ({ packageJson } = {}) {
       .option('-b, --babelrc [file]')
       .option('-t, --timeout [delay]')
 
+    program.allowExcessArguments()
     program.parse((script as string).split(' ') ?? [])
 
     // We are not interested in 'netlify-lambda' and 'build' commands
