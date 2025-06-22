@@ -865,9 +865,7 @@ const onRequest = async (
   }
 
   if (match) {
-    if (!isExternal(match)) {
-      maybeNotifyActivity()
-    }
+    maybeNotifyActivity()
 
     // We don't want to generate an ETag for 3xx redirects.
     // @ts-expect-error TS(7031) FIXME: Binding element 'statusCode' implicitly has an 'an... Remove this comment to see the full error message
